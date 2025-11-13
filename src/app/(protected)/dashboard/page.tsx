@@ -6,6 +6,8 @@ import {
   GitBranch,
   Sparkles,
   Activity,
+  FolderCode,
+  Bot,
 } from "lucide-react";
 import Link from "next/link";
 import useProject from "~/hooks/use-project";
@@ -33,9 +35,9 @@ const DashboardPage = () => {
             {/* Left Content */}
             <div className="flex-1">
               <div className="flex items-center gap-2">
-                <Sparkles className="size-4 animate-pulse text-white" />
+                <FolderCode className="size-6 animate-pulse text-white" />
                 <h1 className="text-xl font-bold text-white md:text-2xl">
-                  Welcome back! 👋
+                  {project?.name || "Your Project Dashboard"}
                 </h1>
                 {/* <div className="ml-1 inline-flex items-center gap-1.5 rounded-full bg-white/20 px-2.5 py-0.5 backdrop-blur-sm">
                   <span className="text-xs font-semibold text-white">
@@ -45,9 +47,12 @@ const DashboardPage = () => {
               </div>
 
               <div className="mt-2 flex flex-wrap items-center gap-2">
-                <p className="text-sm font-medium text-white/95">
-                  {project?.name || "Your Project Dashboard"}
-                </p>
+                <div className="flex items-center gap-1 rounded-md bg-white/10 px-2 py-0.5 backdrop-blur-sm">
+                  <Bot className="size-3 text-white/80" />
+                  <span className="text-xs font-medium text-white/90">
+                    AI-Powered Development
+                  </span>
+                </div>
                 <span className="text-white/40">•</span>
                 <div className="flex items-center gap-1 rounded-md bg-white/10 px-2 py-0.5 backdrop-blur-sm">
                   <div className="size-1.5 animate-pulse rounded-full bg-green-400"></div>
